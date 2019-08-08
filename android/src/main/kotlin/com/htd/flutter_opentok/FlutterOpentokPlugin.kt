@@ -1,5 +1,8 @@
 package com.htd.flutter_opentok
 
+import android.app.Activity;
+import android.app.AlertDialog
+
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
@@ -18,6 +21,10 @@ class FlutterOpentokPlugin: MethodCallHandler {
   override fun onMethodCall(call: MethodCall, result: Result) {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
+    } else if (call.method == "openVideoScreen") {
+      result.success("SUCCESS123")
+    } else if (call.method == "showAlertDialog") {
+      
     } else {
       result.notImplemented()
     }

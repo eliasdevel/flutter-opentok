@@ -40,6 +40,10 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  Future<void> _openAlert() async {
+    await FlutterOpentok.showAlertDialog();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,8 +52,15 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
+            child: Column(
+          children: <Widget>[
+            Text('Running on: $_platformVersion\n'),
+            FloatingActionButton(
+              onPressed: _openAlert,
+              child: Text("Click me"),
+            )
+          ],
+        )),
       ),
     );
   }
