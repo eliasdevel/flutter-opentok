@@ -10,9 +10,8 @@ class FlutterOpentok {
     return version;
   }
 
-  static Future<String> get openVideoScreen async {
-    final String message = await _channel.invokeMethod('openVideoScreen');
-    return message;
+  Future<void> openVideoScreen() async {
+    await _channel.invokeMethod('openVideoScreen');
   }
 
   static Future<void> showAlertDialog() async {
