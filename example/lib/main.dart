@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> _openAlert() async {
-    await FlutterOpentok.showAlertDialog();
+    await FlutterOpentok.openVideoScreen();
   }
 
   @override
