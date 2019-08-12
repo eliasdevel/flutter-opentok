@@ -10,7 +10,7 @@ class FlutterOpentok {
     return version;
   }
 
-  Future<void> openVideoScreen() async {
+  static Future<void> openVideoScreen() async {
     await _channel.invokeMethod('openVideoScreen');
   }
 

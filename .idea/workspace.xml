@@ -7,15 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dec10f41-b521-4397-8817-948ff987c213" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/FlutterOpentokPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/FlutterOpentokPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/OpenTokConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/OpenTokConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/VideoActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/VideoActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/WebServiceCoordinator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/WebServiceCoordinator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_opentok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_opentok.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_opentok.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_opentok.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -43,10 +41,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/FlutterOpentokPlugin.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="480">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
-                <element signature="e#33#356#0" expanded="true" />
+                <element signature="e#33#355#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -217,7 +215,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="444" y="23" width="1680" height="974" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Resources Explorer" />
       <window_info id="Designer" order="0" />
@@ -278,10 +275,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/htd/flutter_opentok/FlutterOpentokPlugin.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="480">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
-            <element signature="e#33#356#0" expanded="true" />
+            <element signature="e#33#355#0" expanded="true" />
           </folding>
         </state>
       </provider>
