@@ -3,7 +3,7 @@ package com.htd.flutter_opentok
 import android.app.Activity
  import android.content.Intent
  import android.opengl.GLSurfaceView
- import android.support.v7.app.AppCompatActivity
+ import androidx.appcompat.app.AppCompatActivity
  import android.Manifest
  import android.os.Bundle
  import android.util.Log

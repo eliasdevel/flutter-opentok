@@ -2,9 +2,9 @@ package com.htd.flutter_opentok
 
 import android.app.Activity;
 import android.content.Intent
-import android.support.v4.app.ActivityCompat.startActivity
-import android.support.v4.app.ActivityCompat.startActivityForResult
-import android.support.v4.content.ContextCompat
+import androidx.core.app.ActivityCompat.startActivity
+import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.core.content.ContextCompat
 
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
