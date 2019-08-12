@@ -9,9 +9,9 @@
      // Replace with your OpenTok API key
      val API_KEY = "46362752"
      // Replace with a generated Session ID
-     val SESSION_ID = "2_MX40NjM2Mjc1Mn5-MTU2Mjc2NTk4MDMyN34wYmxVWE9DWG5EWHg4WmIxdVRUMTY0WDV-fg"
+     val SESSION_ID = "2_MX40NjM2Mjc1Mn5-MTU2NTYwNTkyMTM5Mn5IWXVtWldLL3RsM1p1NTFKRmh3MmxaWm5-fg"
      // Replace with a generated token (from the dashboard or using an OpenTok server SDK)
-     val TOKEN = "T1==cGFydG5lcl9pZD00NjM2Mjc1MiZzaWc9ZTk1NjQxNGQ4Y2E2YzI0YjZhZTY4OTFkYTUzYTFhNmNiMGU0YjFiOTpzZXNzaW9uX2lkPTJfTVg0ME5qTTJNamMxTW41LU1UVTJNamMyTlRrNE1ETXlOMzR3WW14VldFOURXRzVFV0hnNFdtSXhkVlJVTVRZMFdEVi1mZyZjcmVhdGVfdGltZT0xNTYyNzY2MDA0Jm5vbmNlPTAuMTkzMjg2ODcyMzI1NDExOTcmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTU2Mjc2OTYwNCZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ=="
+     val TOKEN = "T1==cGFydG5lcl9pZD00NjM2Mjc1MiZzaWc9ZDdiMzBhM2EzNzQ0NDljZWI1ODYwMDcyYTYyMWVlMDY4OTRjMjY2NTpzZXNzaW9uX2lkPTJfTVg0ME5qTTJNamMxTW41LU1UVTJOVFl3TlRreU1UTTVNbjVJV1hWdFdsZExMM1JzTTFwMU5URktSbWgzTW14YVdtNS1mZyZjcmVhdGVfdGltZT0xNTY1NjA1OTMyJm5vbmNlPTAuMjQ2OTQ1ODA0OTgwMzAwMTcmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTU2NTYwOTUzMiZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ=="
 
      /*                           ***** OPTIONAL *****
       If you have set up a server to provide session information replace the null value
