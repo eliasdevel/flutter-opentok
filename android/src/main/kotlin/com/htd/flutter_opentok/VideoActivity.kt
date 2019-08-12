@@ -10,8 +10,9 @@ import android.app.Activity
  import android.widget.Button
  import android.widget.FrameLayout
  import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
- import com.opentok.android.Session
+import com.opentok.android.Session
  import com.opentok.android.Stream
  import com.opentok.android.Publisher
  import com.opentok.android.PublisherKit
@@ -126,7 +127,11 @@ import android.app.Activity
              val token = intent.extras.getString("token")
              val apiKey = intent.extras.getString("apiKey")
              val sessionId = intent.extras.getString("sessionId")
-             initializeSession(apiKey, sessionId, token)
+             if(token == null || token.isEmpty() || apiKey == null || apiKey.isEmpty() || sessionId == null || sessionId.isEmpty()) {
+                 showError("Configuration Error", "API KEY, SESSION ID and TOKEN cannot be null or empty.")
+             } else  {
+                 initializeSession(apiKey, sessionId, token)
+             }
          } else {
              EasyPermissions.requestPermissions(this, getString(R.string.rationale_video_app), RC_VIDEO_APP_PERM, *perms)
          }
@@ -236,9 +241,16 @@ import android.app.Activity
      }
 
      private fun showOpenTokError(opentokError: OpentokError) {
+         showError("Opentok error", opentokError.errorDomain.name + ": " + opentokError.message + " Please, see the logcat.")
+     }
 
-         Toast.makeText(this, opentokError.errorDomain.name + ": " + opentokError.message + " Please, see the logcat.", Toast.LENGTH_LONG).show()
-         finish()
+     private fun showError(alertTitle: String, errorMessage: String) {
+         Log.e(LOG_TAG, "Error $alertTitle: $errorMessage")
+         AlertDialog.Builder(this)
+                 .setTitle(alertTitle)
+                 .setMessage(errorMessage)
+                 .setPositiveButton("OK") { dialog, which -> this@VideoActivity.finish() }
+                 .show()
      }
 
      companion object {
