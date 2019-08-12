@@ -24,7 +24,8 @@ class FlutterOpentokPlugin: MethodCallHandler {
     } else if (call.method == "openVideoScreen") {
       result.success("SUCCESS123")
     } else if (call.method == "showAlertDialog") {
-      
+//      this@FirstActivity.result = result
+//      startActivityForResult(Intent( this, VideoActivity::class.java), 300)
     } else {
       result.notImplemented()
     }
