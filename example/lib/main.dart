@@ -41,7 +41,12 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> _openAlert() async {
-    await FlutterOpentok.openVideoScreen();
+    await FlutterOpentok.openVideoScreen(
+        apiKey: "46362752",
+        sessionId:
+            "1_MX40NjM2Mjc1Mn5-MTU2NTYxNDg3OTA3N35ZSHNPbmp5dGtRTEljYXFPS1AzVjlCemh-fg",
+        token:
+            "T1==cGFydG5lcl9pZD00NjM2Mjc1MiZzaWc9ODc4OTZlMGE2ZTliNjFhM2I4NGNjNWViZjY2Yzk1NmNkYTNmNDI3MTpzZXNzaW9uX2lkPTFfTVg0ME5qTTJNamMxTW41LU1UVTJOVFl4TkRnM09UQTNOMzVaU0hOUGJtcDVkR3RSVEVsallYRlBTMUF6VmpsQ2VtaC1mZyZjcmVhdGVfdGltZT0xNTY1NjE0ODgzJm5vbmNlPTAuODc3MTU2NTIwMTYxMTEwNSZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNTY1NjE4NDgzJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9");
   }
 
   @override

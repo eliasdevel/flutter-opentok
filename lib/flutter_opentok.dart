@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 
 class FlutterOpentok {
   static const MethodChannel _channel = const MethodChannel('flutter_opentok');
@@ -10,8 +11,12 @@ class FlutterOpentok {
     return version;
   }
 
-  static Future<void> openVideoScreen() async {
-    await _channel.invokeMethod('openVideoScreen');
+  static Future<void> openVideoScreen({
+    @required String apiKey,
+    @required String token,
+    @required String sessionId,
+  }) async {
+    await _channel.invokeMethod('openVideoScreen', [apiKey, token, sessionId]);
   }
 
   static Future<void> showAlertDialog() async {

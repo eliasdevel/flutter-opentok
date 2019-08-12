@@ -1,7 +1,6 @@
 package com.htd.flutter_opentok
 
 import android.app.Activity
- import android.content.Intent
  import android.opengl.GLSurfaceView
  import androidx.appcompat.app.AppCompatActivity
  import android.Manifest
@@ -10,8 +9,6 @@ import android.app.Activity
  import android.view.View
  import android.widget.Button
  import android.widget.FrameLayout
- import android.app.AlertDialog
- import android.content.DialogInterface
  import android.widget.Toast
 
  import com.opentok.android.Session
@@ -23,8 +20,6 @@ import android.app.Activity
  import com.opentok.android.OpentokError
  import com.opentok.android.SubscriberKit
 
- import java.util.Date
-
  import pub.devrel.easypermissions.AfterPermissionGranted
  import pub.devrel.easypermissions.AppSettingsDialog
  import pub.devrel.easypermissions.EasyPermissions
@@ -33,10 +28,7 @@ import android.app.Activity
  /**
   * Activity for video chat for maximum 2 participants.
   */
- class VideoActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks, WebServiceCoordinator.Listener, Session.SessionListener, PublisherKit.PublisherListener, SubscriberKit.SubscriberListener {
-
-     // Suppressing this warning. mWebServiceCoordinator will get GarbageCollected if it is local.
-     private var mWebServiceCoordinator: WebServiceCoordinator? = null
+ class VideoActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks, Session.SessionListener, PublisherKit.PublisherListener, SubscriberKit.SubscriberListener {
 
      private var mSession: Session? = null
      private var mPublisher: Publisher? = null
@@ -46,6 +38,8 @@ import android.app.Activity
 
      private var mPublisherViewContainer: FrameLayout? = null
      private var mSubscriberViewContainer: FrameLayout? = null
+
+
 
      override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -129,24 +123,10 @@ import android.app.Activity
 
          val perms = arrayOf(Manifest.permission.INTERNET, Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
          if (EasyPermissions.hasPermissions(this, *perms)) {
-             // if there is no server URL set
-             if (OpenTokConfig.CHAT_SERVER_URL == null) {
-                 // use hard coded session values
-                 if (OpenTokConfig.areHardCodedConfigsValid()) {
-                     initializeSession(OpenTokConfig.API_KEY, OpenTokConfig.SESSION_ID, OpenTokConfig.TOKEN)
-                 } else {
-                     showConfigError("Configuration Error", OpenTokConfig.hardCodedConfigErrorMessage)
-                 }
-             } else {
-                 // otherwise initialize WebServiceCoordinator and kick off request for session data
-                 // session initialization occurs once data is returned, in onSessionConnectionDataReady
-                 if (OpenTokConfig.isWebServerConfigUrlValid) {
-                     mWebServiceCoordinator = WebServiceCoordinator(this, this)
-                     mWebServiceCoordinator!!.fetchSessionConnectionData(OpenTokConfig.SESSION_INFO_ENDPOINT)
-                 } else {
-                     showConfigError("Configuration Error", OpenTokConfig.webServerConfigErrorMessage)
-                 }
-             }
+             val token = intent.extras.getString("token")
+             val apiKey = intent.extras.getString("apiKey")
+             val sessionId = intent.extras.getString("sessionId")
+             initializeSession(apiKey, sessionId, token)
          } else {
              EasyPermissions.requestPermissions(this, getString(R.string.rationale_video_app), RC_VIDEO_APP_PERM, *perms)
          }
@@ -159,21 +139,6 @@ import android.app.Activity
          mSession!!.connect(token)
      }
 
-     /* Web Service Coordinator delegate methods */
-
-     override fun onSessionConnectionDataReady(apiKey: String, sessionId: String, token: String) {
-
-         Log.d(LOG_TAG, "ApiKey: $apiKey SessionId: $sessionId Token: $token")
-         initializeSession(apiKey, sessionId, token)
-     }
-
-     override fun onWebServiceCoordinatorError(error: Exception) {
-
-         Log.e(LOG_TAG, "Web Service error: " + error.message)
-         Toast.makeText(this, "Web Service error: " + error.message, Toast.LENGTH_LONG).show()
-         finish()
-
-     }
 
      /* Session Listener methods */
 
@@ -274,16 +239,6 @@ import android.app.Activity
 
          Toast.makeText(this, opentokError.errorDomain.name + ": " + opentokError.message + " Please, see the logcat.", Toast.LENGTH_LONG).show()
          finish()
-     }
-
-     private fun showConfigError(alertTitle: String, errorMessage: String) {
-         Log.e(LOG_TAG, "Error $alertTitle: $errorMessage")
-         AlertDialog.Builder(this)
-                 .setTitle(alertTitle)
-                 .setMessage(errorMessage)
-                 .setPositiveButton("ok") { dialog, which -> this@VideoActivity.finish() }
-                 .setIcon(android.R.drawable.ic_dialog_alert)
-                 .show()
      }
 
      companion object {

@@ -1,10 +1,7 @@
 package com.htd.flutter_opentok
 
-import android.app.Activity;
+import android.app.Activity
 import android.content.Intent
-import androidx.core.app.ActivityCompat.startActivity
-import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.core.content.ContextCompat
 
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -30,9 +27,21 @@ class FlutterOpentokPlugin: MethodCallHandler {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
     } else if (call.method == "openVideoScreen") {
-//      startActivity(this.activity, Intent( this.activity, VideoActivity::class.java), null)
-      this.activity.startActivityForResult(Intent( this.activity, VideoActivity::class.java), 300)
-//      startActivityForResult(this.activity, Intent( this.activity, VideoActivity::class.java), 300, null)
+
+      if (call.arguments == null) {
+        result.error("arguments", "==", "null")
+      }
+
+
+      val args: List<String> = call.arguments as List<String>
+      val apiKey: String = args[0]
+      val token: String = args[1]
+      val sessionId: String = args[2]
+      val intent = Intent( this.activity, VideoActivity::class.java)
+      intent.putExtra("apiKey", apiKey)
+      intent.putExtra("token", token)
+      intent.putExtra("sessionId", sessionId)
+      this.activity.startActivityForResult(intent, 300)
     } else {
       result.notImplemented()
     }
