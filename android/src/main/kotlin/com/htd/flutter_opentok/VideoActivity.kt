@@ -9,7 +9,6 @@ import android.app.Activity
  import android.view.View
  import android.widget.Button
  import android.widget.FrameLayout
- import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 import com.opentok.android.Session
