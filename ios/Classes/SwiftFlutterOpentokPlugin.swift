@@ -31,6 +31,6 @@ public class SwiftFlutterOpentokPlugin: NSObject, FlutterPlugin {
    videoChatVC.onCloseTap = { callDuration in
        result("\(callDuration) seconds")
    }
-   window.rootViewController?.present(navVC, animated: true, completion: nil)
+  // window.rootViewController?.present(navVC, animated: true, completion: nil)
   }
 }
