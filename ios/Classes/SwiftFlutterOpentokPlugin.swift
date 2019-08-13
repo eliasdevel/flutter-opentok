@@ -1,11 +1,13 @@
 import Flutter
 import UIKit
 
+
 public class SwiftFlutterOpentokPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "flutter_opentok", binaryMessenger: registrar.messenger())
     let instance = SwiftFlutterOpentokPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
+    
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
@@ -19,18 +21,19 @@ public class SwiftFlutterOpentokPlugin: NSObject, FlutterPlugin {
       }
     }
     else if (call.method == "openVideoScreen") {
-      self?.presentVideoChatScreen(result: result)
+      self.presentVideoChatScreen(result: result)
     }
   }
 
   func presentVideoChatScreen(result: @escaping FlutterResult) {
+    let appDelegate = UIApplication.shared.delegate
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let identifier = "VideoChatNavigationViewController"
     let navVC = storyboard.instantiateViewController(withIdentifier: identifier) as! UINavigationController
-    let videoChatVC = navVC.viewControllers.first as! VideoChatViewController
-    videoChatVC.onCloseTap = { callDuration in
+    let videoChatVC = navVC.viewControllers.first as? VideoChatViewController
+    videoChatVC!.onCloseTap = { callDuration in
         result("\(callDuration) seconds")
     }
-    window.rootViewController?.present(navVC, animated: true, completion: nil)
+    appDelegate?.window??.rootViewController?.present(navVC, animated: true, completion: nil)
   }
 }
