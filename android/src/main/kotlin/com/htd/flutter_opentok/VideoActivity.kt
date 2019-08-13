@@ -35,6 +35,7 @@ import com.opentok.android.Session
      private var mSubscriber: Subscriber? = null
 
      private var btnEndCall: Button? = null
+     private var changeCameraButton: Button? = null
 
      private var mPublisherViewContainer: FrameLayout? = null
      private var mSubscriberViewContainer: FrameLayout? = null
@@ -62,6 +63,10 @@ import com.opentok.android.Session
                  setResult(Activity.RESULT_OK, intent)
                  finish()
              }
+         }
+         changeCameraButton = findViewById<View>(R.id.changeCameraButton) as Button
+         changeCameraButton!!.setOnClickListener {
+             mPublisher!!.cycleCamera()
          }
          requestPermissions()
      }
@@ -123,26 +128,26 @@ import com.opentok.android.Session
 
          val perms = arrayOf(Manifest.permission.INTERNET, Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
          if (EasyPermissions.hasPermissions(this, *perms)) {
-             val token = intent.extras.getString("token")
-             val apiKey = intent.extras.getString("apiKey")
-             val sessionId = intent.extras.getString("sessionId")
-             if(token == null || token.isEmpty() || apiKey == null || apiKey.isEmpty() || sessionId == null || sessionId.isEmpty()) {
-                 showError("Configuration Error", "API KEY, SESSION ID and TOKEN cannot be null or empty.")
-             } else  {
-                 initializeSession(apiKey, sessionId, token)
-             }
+             initializeSession()
          } else {
              EasyPermissions.requestPermissions(this, getString(R.string.rationale_video_app), RC_VIDEO_APP_PERM, *perms)
          }
      }
 
-     private fun initializeSession(apiKey: String, sessionId: String, token: String) {
 
-         mSession = Session.Builder(this, apiKey, sessionId).build()
-         mSession!!.setSessionListener(this)
-         mSession!!.connect(token)
+     private fun initializeSession() {
+         val token = intent.extras.getString("token")
+         val apiKey = intent.extras.getString("apiKey")
+         val sessionId = intent.extras.getString("sessionId")
+
+         if(token == null || token.isEmpty() || apiKey == null || apiKey.isEmpty() || sessionId == null || sessionId.isEmpty()) {
+             showError("Configuration Error", "API KEY, SESSION ID and TOKEN cannot be null or empty.")
+         } else  {
+             mSession = Session.Builder(this, apiKey, sessionId).build()
+             mSession!!.setSessionListener(this)
+             mSession!!.connect(token)
+        }
      }
-
 
      /* Session Listener methods */
 

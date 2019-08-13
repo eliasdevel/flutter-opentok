@@ -12,7 +12,9 @@
         <FrameLayout
             android:id="@+id/subscriber_container"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
+            android:layout_height="fill_parent" >
+
+        </FrameLayout>
 
         <FrameLayout
             android:id="@+id/publisher_container"
@@ -41,6 +43,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Waiting for the participant to join the call" />
+
+        <Button
+            android:id="@+id/changeCameraButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Camera" />
 
     </FrameLayout>
 
