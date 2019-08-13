@@ -12,6 +12,7 @@
 		3B80C3941E831B6300D905FE /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B80C3931E831B6300D905FE /* App.framework */; };
 		3B80C3951E831B6300D905FE /* App.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B80C3931E831B6300D905FE /* App.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73CFE19C22FC7E940097EFCC /* VideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFE19B22FC7E940097EFCC /* VideoChatViewController.swift */; };
+		73D9A9C22301C15A0027BC52 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D9A9BC2301C1000027BC52 /* libc++.tbd */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		77F6A73502A0CFEC0222F9BD /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA5454CA1879D7F064777A1 /* Pods_Runner.framework */; };
 		9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9740EEBA1CF902C7004384FC /* Flutter.framework */; };
@@ -47,6 +48,9 @@
 		6EA5454CA1879D7F064777A1 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		733B9D4522FC646500D191A9 /* flutter_opentok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = flutter_opentok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CFE19B22FC7E940097EFCC /* VideoChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoChatViewController.swift; path = ../../ios/Classes/VideoChatViewController.swift; sourceTree = "<group>"; };
+		73D9A9BC2301C1000027BC52 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		73D9A9BE2301C1270027BC52 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		73D9A9C02301C1340027BC52 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D9A9C22301C15A0027BC52 /* libc++.tbd in Frameworks */,
 				9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */,
 				3B80C3941E831B6300D905FE /* App.framework in Frameworks */,
 				77F6A73502A0CFEC0222F9BD /* Pods_Runner.framework in Frameworks */,
@@ -134,6 +139,9 @@
 		B405A517DE7EAF6AF3EBEF70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73D9A9C02301C1340027BC52 /* libc++.1.tbd */,
+				73D9A9BE2301C1270027BC52 /* libc++abi.tbd */,
+				73D9A9BC2301C1000027BC52 /* libc++.tbd */,
 				733B9D4522FC646500D191A9 /* flutter_opentok.framework */,
 				6EA5454CA1879D7F064777A1 /* Pods_Runner.framework */,
 			);

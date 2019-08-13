@@ -14,7 +14,11 @@ Flutter opentok implementation
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
-  s.dependency 'Flutter'
+  s.dependency 'OpenTok'
+  s.preserve_paths = 'OpenTok.framework'
+  s.xcconfig = { 'OTHER_LDFLAGS' => '-OpenTok OpenTok' }
+  s.vendored_frameworks = 'OpenTok.framework'
+  s.static_framework = true
 
   s.ios.deployment_target = '8.0'
 end
