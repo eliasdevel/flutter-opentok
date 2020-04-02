@@ -41,6 +41,12 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> _openAlert() async {
+	//modify here
+	await FlutterOpentok.setApiUrl("asszxc");  
+	await FlutterOpentok.setApiKey("tewasddsd");
+	await FlutterOpentok.setApiSessionId("asdasdd");
+	await FlutterOpentok.setApiToken("asszxc");  
+
     await FlutterOpentok.openVideoScreen();
   }
 

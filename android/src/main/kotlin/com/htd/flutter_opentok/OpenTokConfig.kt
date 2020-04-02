@@ -7,11 +7,11 @@
      // ***                      https://dashboard.tokbox.com/projects                           ***
 
      // Replace with your OpenTok API key
-     val API_KEY = "46362752"
+    public var API_KEY: String = "46362752"
      // Replace with a generated Session ID
-     val SESSION_ID = "2_MX40NjM2Mjc1Mn5-MTU2NTYwNTkyMTM5Mn5IWXVtWldLL3RsM1p1NTFKRmh3MmxaWm5-fg"
+    public var SESSION_ID: String = "2_MX40NjM2Mjc1Mn5-MTU2NTYwNTkyMTM5Mn5IWXVtWldLL3RsM1p1NTFKRmh3MmxaWm5-fg"
      // Replace with a generated token (from the dashboard or using an OpenTok server SDK)
-     val TOKEN = "T1==cGFydG5lcl9pZD00NjM2Mjc1MiZzaWc9ZDdiMzBhM2EzNzQ0NDljZWI1ODYwMDcyYTYyMWVlMDY4OTRjMjY2NTpzZXNzaW9uX2lkPTJfTVg0ME5qTTJNamMxTW41LU1UVTJOVFl3TlRreU1UTTVNbjVJV1hWdFdsZExMM1JzTTFwMU5URktSbWgzTW14YVdtNS1mZyZjcmVhdGVfdGltZT0xNTY1NjA1OTMyJm5vbmNlPTAuMjQ2OTQ1ODA0OTgwMzAwMTcmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTU2NTYwOTUzMiZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ=="
+    public var TOKEN: String = "T1==cGFydG5lcl9pZD00NjM2Mjc1MiZzaWc9ZDdiMzBhM2EzNzQ0NDljZWI1ODYwMDcyYTYyMWVlMDY4OTRjMjY2NTpzZXNzaW9uX2lkPTJfTVg0ME5qTTJNamMxTW41LU1UVTJOVFl3TlRreU1UTTVNbjVJV1hWdFdsZExMM1JzTTFwMU5URktSbWgzTW14YVdtNS1mZyZjcmVhdGVfdGltZT0xNTY1NjA1OTMyJm5vbmNlPTAuMjQ2OTQ1ODA0OTgwMzAwMTcmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTU2NTYwOTUzMiZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ=="
 
      /*                           ***** OPTIONAL *****
       If you have set up a server to provide session information replace the null value
@@ -19,8 +19,9 @@
 
       For example: "https://yoursubdomain.com"
      */
-     val CHAT_SERVER_URL: String? = null
-     val SESSION_INFO_ENDPOINT = CHAT_SERVER_URL?:"" + "/session"
+    public  var CHAT_SERVER_URL = ""
+    
+    public  val SESSION_INFO_ENDPOINT = CHAT_SERVER_URL?:"" + "/session"
 
 
      // *** The code below is to validate this configuration file. You do not need to modify it  ***
